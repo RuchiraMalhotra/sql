@@ -166,8 +166,8 @@ FROM daily_sales
 
 /* SECTION 3 */
 
--- Cross Join
-/*1. Suppose every vendor in the `vendor_inventory` table had 5 of each of their products to sell to **every** 
+-- Cross Join 
+/*1. Suppose every vendor, in the `vendor_inventory` table had 5 of each of their products to sell to **every** 
 customer on record. How much money would each vendor make per product? 
 Show this by vendor_name and product name, rather than using the IDs.
 
