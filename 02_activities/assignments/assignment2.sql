@@ -27,10 +27,13 @@ SELECT
 product_name || ', ' || product_size || ' (' || product_qty_type || ')'
 FROM product;
 
+
+
 SELECT *
 FROM product
 WHERE product_size IS NULL
 OR product_qty_type IS NULL;
+
 
 SELECT 
 COALESCE(product_size, ' ') || ', ' || product_name || ' (' || COALESCE(product_qty_type, 'unit') || ')'
@@ -143,6 +146,7 @@ HINT: There are a possibly a few ways to do this query, but if you're struggling
 3) Query the second temp table twice, once for the best day, once for the worst day, 
 with a UNION binding them. */
 
+
 DROP TABLE IF EXISTS temp.sales_value_grouped_dates;
 
 CREATE TABLE temp.sales_value_grouped_dates AS
@@ -171,6 +175,7 @@ UNION
 SELECT market_date, Final_sales, 'Worst Day' AS category
 FROM temp.ranked_sales
 WHERE worst_day = 1;
+
 
 /* SECTION 3 */
 
